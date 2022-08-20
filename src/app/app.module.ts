@@ -10,6 +10,12 @@ import {MatIconModule} from '@angular/material/icon';
 import { MenuComponent } from './menu/menu.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { AddFoodComponent } from './add-food/add-food.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 @NgModule({
   declarations: [
@@ -24,7 +30,12 @@ import { AddFoodComponent } from './add-food/add-food.component';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
-    MatSidenavModule
+    MatSidenavModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideDatabase(() => getDatabase()),
+    provideFirestore(() => getFirestore()),
+    MatButtonToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

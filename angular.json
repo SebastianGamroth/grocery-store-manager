@@ -102,6 +102,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "grocery-store-manager:build:production",
+            "firebaseProject": "angular-firebase-example-d0a22",
+            "firebaseHostingSite": "angular-firebase-example-d0a22"
+          }
         }
       }
     }

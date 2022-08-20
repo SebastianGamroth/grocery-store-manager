@@ -1,0 +1,13 @@
+mat-button-toggle-group {
+    flex-direction: column;
+    width: 100%;
+    border: none !important;
+
+    ::ng-deep .mat-button-toggle-label-content {
+        padding: 0px;
+    }
+}
+
+.mat-button-toggle {
+    border-bottom: solid 1px #e0e0e0;
+}

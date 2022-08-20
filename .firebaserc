@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-firebase-example-d0a22": {
+      "hosting": {
+        "grocery-store-manager": [
+          "angular-firebase-example-d0a22"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular-firebase-example-d0a22"
+  }
+}
