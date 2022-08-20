@@ -3,11 +3,12 @@ import { Foods } from '../models/foods.class';
 import { collection, Firestore, getDocs } from '@angular/fire/firestore';
 
 @Component({
-  selector: 'app-add-food',
-  templateUrl: './add-food.component.html',
-  styleUrls: ['./add-food.component.scss']
+  selector: 'app-add-foods',
+  templateUrl: './add-foods.component.html',
+  styleUrls: ['./add-foods.component.scss']
 })
-export class AddFoodComponent implements OnInit {
+
+export class AddFoodsComponent implements OnInit {
 
   foodsClass = new Foods();
   foodsArray = [];
