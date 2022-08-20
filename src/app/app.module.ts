@@ -9,12 +9,14 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { MenuComponent } from './menu/menu.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { AddFoodComponent } from './add-food/add-food.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    MenuComponent
+    MenuComponent,
+    AddFoodComponent
   ],
   imports: [
     BrowserModule,
