@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Foods } from '../models/foods.class';
-import { collection, Firestore, getDocs } from '@angular/fire/firestore';
+import { addDoc, collection, deleteDoc, doc, Firestore, getDocs } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-add-foods',
@@ -16,6 +16,9 @@ export class AddFoodsComponent implements OnInit {
   colRef: any;
   docRef: any;
   docsSnap: any;
+
+  colorId: string;
+  timeStemp: any;
 
   constructor(private firestore: Firestore) { }
 
@@ -40,7 +43,44 @@ export class AddFoodsComponent implements OnInit {
 
       this.foodsArray.push(this.foodsClass.toJSON());
     });
-    console.log(this.foodsArray);
+
+    // Sort timestamp ascending order
+    this.foodsArray.sort(function (a, b) {
+      return parseFloat(a.timeStemp) - parseFloat(b.timeStemp);
+    });
+
+    this.foodsClass.name = '';
+    this.foodsClass.price = '';
+    this.foodsClass.genus = '';
+    this.foodsClass.calories = '';
+    this.foodsClass.carbohydrates = '';
+    this.foodsClass.protein = '';
+    this.foodsClass.fat = '';
+    console.log('foodsArray ', this.foodsArray);
+  }
+
+  // input value -> foodsClass -> firebase
+  addFruitToDoc() {
+    this.timeStemp = new Date;
+    this.foodsClass.timeStemp = this.timeStemp.getTime();
+
+    addDoc(this.colRef, this.foodsClass.toJSON())
+      .then(() => {
+        this.foodsArray = [];
+        this.getAllData();
+      })
+      .catch(error => {
+        console.log(error);
+      })
+  }
+
+  // 
+  deleteOneDoc(id: any) {
+    this.docRef = doc(this.firestore, "fruits", id);
+    deleteDoc(this.docRef).then(() => {
+      this.foodsArray = [];
+      this.getAllData();
+    })
   }
 
 }

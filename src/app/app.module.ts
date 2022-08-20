@@ -16,6 +16,11 @@ import { provideDatabase, getDatabase } from '@angular/fire/database';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { AddFoodsComponent } from './add-foods/add-foods.component';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -35,7 +40,12 @@ import { AddFoodsComponent } from './add-foods/add-foods.component';
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    FormsModule,
+    MatInputModule,
+    MatCardModule,
+    MatButtonModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
