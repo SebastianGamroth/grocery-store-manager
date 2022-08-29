@@ -1,20 +1,16 @@
-interface Food {
-    value: string;
-    viewValue: string;
-}
-
 export class Foods {
 
-    foods: Food[] = [
-        { value: 'Fruit', viewValue: 'Fruit' },
+    foods = [
+        { value: 'Fruits', viewValue: 'Fruits' },
         { value: 'Vegetables', viewValue: 'Vegetables' },
     ];
 
-    // "nutritions": {
-    //   "calories": 52,
-    //   "carbohydrates": 11.4,
-    //   "protein": 0.3,
-    //   "fat": 0.4
+    boardArray: any = {
+        'wahrenhouse': [],
+        'monday': [],
+        'wednesday': [],
+        'friday': []
+    };
 
     id: string;
     genus: string;
@@ -25,6 +21,7 @@ export class Foods {
     protein: string;
     fat: string;
     timeStemp: any;
+    chalkboard: any;
 
     constructor(obj?: any) {
         this.id = obj ? obj.id : '';
@@ -36,6 +33,7 @@ export class Foods {
         this.protein = obj ? obj.protein : '';
         this.fat = obj ? obj.fat : '';
         this.timeStemp = obj ? obj.timeStemp : '';
+        this.chalkboard = obj ? obj.chalkboard : '';
     }
 
 
@@ -49,7 +47,8 @@ export class Foods {
             carbohydrates: this.carbohydrates,
             protein: this.protein,
             fat: this.fat,
-            timeStemp: this.timeStemp
+            timeStemp: this.timeStemp,
+            chalkboard: this.chalkboard
         }
     }
 }

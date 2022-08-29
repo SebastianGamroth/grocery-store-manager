@@ -1,11 +1,31 @@
+<div class="container">
+
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+        <mat-button-toggle (click)="changeGenusFilter('Fruits')" value="Fruits">Fruits</mat-button-toggle>
+        <mat-button-toggle (click)="changeGenusFilter('Vegetables')" value="Vegetables">Vegetables</mat-button-toggle>
+        <mat-button-toggle value="Milk">Milk</mat-button-toggle>
+    </mat-button-toggle-group>
+
+    <mat-card class="cardGenus">
+
+        <mat-card class="cardGenusName" *ngFor="let all of filterGenusArray">{{ all['name'] }}</mat-card>
+        <!-- <table>
+            <tr *ngFor="let all of filterGenusArray">
+                <td>{{ all['name'] }}</td>
+            </tr>
+        </table> -->
+    </mat-card>
+
+</div>
+
 <div class="mainContainer">
 
     <form class="example-form">
 
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Genus</mat-label>
-            <mat-select [(ngModel)]="foodsClass.genus" name="food">
-                <mat-option *ngFor="let food of foodsClass.foods" [value]="food.value">
+            <mat-select [(ngModel)]="service.foodsClass.genus" name="food">
+                <mat-option *ngFor="let food of service.foodsClass.foods" [value]="food.value">
                     {{food.viewValue}}
                 </mat-option>
             </mat-select>
@@ -13,44 +33,44 @@
 
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Name</mat-label>
-            <input [(ngModel)]="foodsClass.name" name="name" matInput placeholder="text..." value="">
+            <input [(ngModel)]="service.foodsClass.name" name="name" matInput placeholder="text..." value="">
         </mat-form-field>
 
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Price</mat-label>
-            <input [(ngModel)]="foodsClass.price" name="number" matInput placeholder="number..." value="">
+            <input [(ngModel)]="service.foodsClass.price" name="number" matInput placeholder="number..." value="">
         </mat-form-field>
 
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Calories</mat-label>
-            <input [(ngModel)]="foodsClass.calories" name="number" matInput placeholder="number..." value="">
+            <input [(ngModel)]="service.foodsClass.calories" name="number" matInput placeholder="number..." value="">
         </mat-form-field>
 
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Carbohydrates</mat-label>
-            <input [(ngModel)]="foodsClass.carbohydrates" name="number" matInput placeholder="number..." value="">
+            <input [(ngModel)]="service.foodsClass.carbohydrates" name="number" matInput placeholder="number..." value="">
         </mat-form-field>
 
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Protein</mat-label>
-            <input [(ngModel)]="foodsClass.protein" name="number" matInput placeholder="number..." value="">
+            <input [(ngModel)]="service.foodsClass.protein" name="number" matInput placeholder="number..." value="">
         </mat-form-field>
 
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Fat</mat-label>
-            <input [(ngModel)]="foodsClass.fat" name="number" matInput placeholder="number..." value="">
+            <input [(ngModel)]="service.foodsClass.fat" name="number" matInput placeholder="number..." value="">
         </mat-form-field>
 
         <div class="example-button-row">
-            <button mat-raised-button (click)=" addFruitToDoc()" color="primary">Add</button>
+            <button mat-raised-button (click)="addFoodToDoc()" color="primary">Add</button>
         </div>
 
         <mat-card class="cardTable">
             <table>
-                <tr *ngFor="let doc of foodsArray">
+                <tr *ngFor="let doc of service.foodsArray">
                     <td>{{ doc.name }} {{ doc.price }}
                         <div class="example-button-row">
-                            <button mat-raised-button (click)=" deleteOneDoc(doc.id)" color="primary">Del</button>
+                            <button mat-raised-button (click)=" deleteFoodFromDoc(doc.id)" color="primary">Del</button>
                         </div>
                     </td>
                 </tr>
