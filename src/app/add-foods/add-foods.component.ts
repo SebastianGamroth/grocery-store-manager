@@ -28,7 +28,7 @@ export class AddFoodsComponent implements OnInit {
   }
 
   changeGenusFilter(value: any) {
-    console.log(value);
+    // console.log(value);
     let selection = this.service.foodsArray.filter(t => t['genus'] == value);
     this.filterGenusArray = selection;
     // if (value == 'all') {
