@@ -5,6 +5,12 @@
 }
 
 mat-button-toggle-group {
+    mat-button-toggle {
+        margin: 14px;
+        border: solid 1px #e0e0e0;
+        border-radius: 4px;
+    }
+
     ::ng-deep .mat-button-toggle-label-content {
         width: 80px;
     }
@@ -12,14 +18,14 @@ mat-button-toggle-group {
 
 .cardGenus {
     display: flex;
+    flex-wrap: wrap;
     margin-top: 20px;
-    max-width: 280px;
+    max-width: 372px;
     width: 100%;
-    
+
     .cardGenusName {
         width: 80px;
-        margin-left: 6px;
-        margin-right: 6px;
+        margin: 6px;
     }
 }
 

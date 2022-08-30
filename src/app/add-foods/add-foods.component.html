@@ -1,9 +1,12 @@
 <div class="container">
 
-    <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-        <mat-button-toggle (click)="changeGenusFilter('Fruits')" value="Fruits">Fruits</mat-button-toggle>
-        <mat-button-toggle (click)="changeGenusFilter('Vegetables')" value="Vegetables">Vegetables</mat-button-toggle>
-        <mat-button-toggle value="Milk">Milk</mat-button-toggle>
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style" value="Fruits">
+        <mat-button-toggle mat-raised-button matBadge="{{ fruitsValue }}" (click)="changeGenusFilter('Fruits')"
+            value="Fruits">Fruits</mat-button-toggle>
+        <mat-button-toggle mat-raised-button matBadge="{{ vegetablesValue }}" (click)="changeGenusFilter('Vegetables')"
+            value="Vegetables">
+            Vegetables</mat-button-toggle>
+        <mat-button-toggle mat-raised-button matBadge="{{ milkValue }}" value="Milk">Milk</mat-button-toggle>
     </mat-button-toggle-group>
 
     <mat-card class="cardGenus">
@@ -48,7 +51,8 @@
 
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Carbohydrates</mat-label>
-            <input [(ngModel)]="service.foodsClass.carbohydrates" name="number" matInput placeholder="number..." value="">
+            <input [(ngModel)]="service.foodsClass.carbohydrates" name="number" matInput placeholder="number..."
+                value="">
         </mat-form-field>
 
         <mat-form-field class="example-full-width" appearance="fill">

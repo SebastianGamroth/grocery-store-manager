@@ -23,6 +23,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { ChalkboardPlannerComponent } from './chalkboard-planner/chalkboard-planner.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatBadgeModule } from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     MatCardModule,
     MatButtonModule,
     MatSelectModule,
-    DragDropModule
+    DragDropModule,
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

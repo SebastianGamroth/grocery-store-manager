@@ -22,6 +22,7 @@ export class DataService {
   filterGenusArray: any;
 
   addNewProductToChalkboard: any;
+  currentGenus: any;
 
   constructor(private firestore: Firestore) { }
 
@@ -85,7 +86,9 @@ export class DataService {
       .then(() => {
         this.foodsArray = [];
         this.addNewProductToChalkboard = this.foodsClass.id;
+        this.currentGenus = this.foodsClass.genus;
         this.getAllData();
+        console.log(this.foodsClass.genus)
       })
       .catch(error => {
         console.log(error);
