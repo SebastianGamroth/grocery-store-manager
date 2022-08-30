@@ -10,8 +10,9 @@
     </mat-button-toggle-group>
 
     <mat-card class="cardGenus">
-
-        <mat-card class="cardGenusName" *ngFor="let all of filterGenusArray">{{ all['name'] }}</mat-card>
+        <mat-card class="cardGenusName" matTooltip="{{ all['genus']}}: {{ all['name']}} 
+        Price: {{all['price']}}" *ngFor="let all of filterGenusArray">{{
+            all['name'] }}</mat-card>
         <!-- <table>
             <tr *ngFor="let all of filterGenusArray">
                 <td>{{ all['name'] }}</td>

@@ -29,6 +29,10 @@ mat-button-toggle-group {
     }
 }
 
+::ng-deep .mat-tooltip {
+    white-space: pre-line; // Allow line break
+}
+
 .mainContainer {
     display: flex;
     justify-content: center;
