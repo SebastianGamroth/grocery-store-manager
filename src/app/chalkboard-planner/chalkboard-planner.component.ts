@@ -19,7 +19,8 @@ export class ChalkboardPlannerComponent implements OnInit {
 
   constructor(public service: DataService) { }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    await this.service.getAllData();
     this.changeProductFilter();
   }
 

@@ -25,6 +25,9 @@ import { ChalkboardPlannerComponent } from './chalkboard-planner/chalkboard-plan
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { EditListComponent } from './edit-list/edit-list.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogAddEditComponent } from './dialog-add-edit/dialog-add-edit.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     HeaderComponent,
     MenuComponent,
     AddFoodsComponent,
-    ChalkboardPlannerComponent
+    ChalkboardPlannerComponent,
+    EditListComponent,
+    DialogAddEditComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +58,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatSelectModule,
     DragDropModule,
     MatBadgeModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

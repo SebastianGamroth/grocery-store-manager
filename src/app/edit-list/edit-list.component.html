@@ -1,0 +1,19 @@
+<div class="mainContainer">
+
+    <form class="example-form">
+
+        <mat-card class="cardTable">
+            <table>
+                <tr *ngFor="let doc of service.foodsArray">
+                    <td>{{ doc.name }} {{ doc.price }}
+                        <div class="example-button-row">
+                            <button mat-raised-button (click)=" deleteFoodFromDoc(doc.id)" color="primary">Del</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </mat-card>
+
+    </form>
+
+</div>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Foods } from '../models/foods.class';
 import { DataService } from '../services/data.service';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogAddEditComponent } from '../dialog-add-edit/dialog-add-edit.component';
 
 @Component({
   selector: 'app-add-foods',
@@ -11,7 +13,6 @@ import { DataService } from '../services/data.service';
 export class AddFoodsComponent implements OnInit {
 
   foodsClass = new Foods();
-  // foodsArray = [];
 
   filterGenusArray: any;
 
@@ -19,7 +20,7 @@ export class AddFoodsComponent implements OnInit {
   vegetablesValue: any;
   milkValue: any = 0;
 
-  constructor(public service: DataService) { }
+  constructor(public service: DataService, public dialog: MatDialog) { }
 
   async ngOnInit(): Promise<void> {
     await this.service.getAllData();
@@ -45,19 +46,20 @@ export class AddFoodsComponent implements OnInit {
   }
 
 
-  // input value -> foodsClass -> firebase
-  addFoodToDoc() {
-    this.service.addFoodToDoc('wahrenhouse');
+  openDialog(): void {
 
-    setTimeout(() => {
-      console.log(this.service.currentGenus)
-      this.changeGenusFilter(this.service.currentGenus);
-    }, 1000);
+    const dialogRef = this.dialog.open(DialogAddEditComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`The dialog was closed ${result}`);
+
+      setTimeout(() => {
+        // console.log(this.service.currentGenus)
+        this.changeGenusFilter(this.service.currentGenus);
+      }, 1000);
+
+    });
   }
 
-
-  deleteFoodFromDoc(id: any) {
-    this.service.deleteFoodFromDoc(id);
-  }
 
 }

@@ -54,31 +54,5 @@ mat-button-toggle-group {
 .example-button-row {
     display: flex;
     justify-content: center;
-}
-
-.cardTable {
     margin-top: 20px;
-    margin-bottom: 20px;
-    padding-left: 0px;
-    padding-right: 0px;
-    max-width: 300px;
-    width: 100%;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-
-    td {
-        display: flex;
-        justify-content: space-between;
-        border-top: 0.6px solid #e0e0e0;
-        border-bottom: 0.6px solid #e0e0e0;
-        height: 52px;
-        text-align: center;
-
-        &:hover {
-            background-color: rgba(0, 0, 0, 0.1);
-        }
-    }
 }

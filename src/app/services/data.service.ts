@@ -88,7 +88,7 @@ export class DataService {
         this.addNewProductToChalkboard = this.foodsClass.id;
         this.currentGenus = this.foodsClass.genus;
         this.getAllData();
-        console.log(this.foodsClass.genus)
+        // console.log(this.foodsClass.genus)
       })
       .catch(error => {
         console.log(error);

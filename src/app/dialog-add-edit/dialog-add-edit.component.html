@@ -1,0 +1,56 @@
+<div class="mainContainer">
+
+    <form class="example-form">
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Genus</mat-label>
+            <mat-select [(ngModel)]="service.foodsClass.genus" name="food">
+                <mat-option *ngFor="let food of service.foodsClass.foods" [value]="food.value">
+                    {{food.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Name</mat-label>
+            <input [(ngModel)]="service.foodsClass.name" name="name" matInput placeholder="text..." value="">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Price</mat-label>
+            <input [(ngModel)]="service.foodsClass.price" name="number" matInput placeholder="number..." value="">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Calories</mat-label>
+            <input [(ngModel)]="service.foodsClass.calories" name="number" matInput placeholder="number..." value="">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Carbohydrates</mat-label>
+            <input [(ngModel)]="service.foodsClass.carbohydrates" name="number" matInput placeholder="number..."
+                value="">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Protein</mat-label>
+            <input [(ngModel)]="service.foodsClass.protein" name="number" matInput placeholder="number..." value="">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Fat</mat-label>
+            <input [(ngModel)]="service.foodsClass.fat" name="number" matInput placeholder="number..." value="">
+        </mat-form-field>
+
+        <!-- <div class="example-button-row">
+            <button mat-raised-button (click)="addFoodToDoc()" color="primary">Add</button>
+        </div> -->
+
+        <div mat-dialog-actions>
+            <button mat-button (click)="onNoClick()">Cancel</button>
+            <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="addFoodToDoc()">Add</button>
+        </div>
+
+    </form>
+
+</div>
