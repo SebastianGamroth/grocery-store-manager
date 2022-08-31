@@ -28,6 +28,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { EditListComponent } from './edit-list/edit-list.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogAddEditComponent } from './dialog-add-edit/dialog-add-edit.component';
+import { StartInfoComponent } from './start-info/start-info.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { DialogAddEditComponent } from './dialog-add-edit/dialog-add-edit.compon
     AddFoodsComponent,
     ChalkboardPlannerComponent,
     EditListComponent,
-    DialogAddEditComponent
+    DialogAddEditComponent,
+    StartInfoComponent
   ],
   imports: [
     BrowserModule,
