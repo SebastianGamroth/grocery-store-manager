@@ -24,6 +24,11 @@ export class DataService {
   addNewProductToChalkboard: any;
   currentGenus: any;
 
+  filterGenusGroup: any = {
+    'fruits': [],
+    'vegetables': []
+  }
+
   constructor(private firestore: Firestore) { }
 
   async getAllData() {
@@ -143,6 +148,14 @@ export class DataService {
       this.foodsArray = [];
       this.getAllData();
     })
+  }
+
+  filterGenus() {
+    let fruits = this.foodsArray.filter(t => t['genus'] == 'Fruits');
+    this.filterGenusGroup.fruits = fruits;
+
+    let vegetables = this.foodsArray.filter(t => t['genus'] == 'Vegetables');
+    this.filterGenusGroup.vegetables = vegetables;
   }
 
 }

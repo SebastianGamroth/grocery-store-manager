@@ -4,14 +4,16 @@
 }
 
 .example-form {
+    display: flex;
     margin-top: 30px;
     min-width: 150px;
-    max-width: 300px;
+    max-width: 450px;
     width: 100%;
 }
 
 .cardTable {
-    margin-top: 20px;
+    // margin-top: 20px;
+    margin: 10px;
     margin-bottom: 20px;
     padding-left: 0px;
     padding-right: 0px;
@@ -23,13 +25,20 @@ table {
     width: 100%;
     border-collapse: collapse;
 
+    th {
+        padding-bottom: 12px
+    }
+
     td {
         display: flex;
+        align-items: center;
         justify-content: space-between;
         border-top: 0.6px solid #e0e0e0;
         border-bottom: 0.6px solid #e0e0e0;
         height: 52px;
         text-align: center;
+        padding-left: 6px;
+        padding-right: 6px;
 
         &:hover {
             background-color: rgba(0, 0, 0, 0.1);

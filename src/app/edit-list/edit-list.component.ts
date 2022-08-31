@@ -12,6 +12,7 @@ export class EditListComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     await this.service.getAllData();
+    this.service.filterGenus();
   }
 
   deleteFoodFromDoc(id: any) {

@@ -4,7 +4,21 @@
 
         <mat-card class="cardTable">
             <table>
-                <tr *ngFor="let doc of service.foodsArray">
+                <th>Fruits</th>
+                <tr *ngFor="let doc of service.filterGenusGroup.fruits">
+                    <td>{{ doc.name }} {{ doc.price }}
+                        <div class="example-button-row">
+                            <button mat-raised-button (click)=" deleteFoodFromDoc(doc.id)" color="primary">Del</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </mat-card>
+
+        <mat-card class="cardTable">
+            <table>
+                <th>Vegetables</th>
+                <tr *ngFor="let doc of service.filterGenusGroup.vegetables">
                     <td>{{ doc.name }} {{ doc.price }}
                         <div class="example-button-row">
                             <button mat-raised-button (click)=" deleteFoodFromDoc(doc.id)" color="primary">Del</button>
