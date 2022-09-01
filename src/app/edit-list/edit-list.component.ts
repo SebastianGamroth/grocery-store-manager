@@ -15,8 +15,10 @@ export class EditListComponent implements OnInit {
     this.service.filterGenus();
   }
 
-  deleteFoodFromDoc(id: any) {
+  async deleteFoodFromDoc(id: any) {
     this.service.deleteFoodFromDoc(id);
+    await this.service.getAllData();
+    this.service.filterGenus();
   }
 
 }

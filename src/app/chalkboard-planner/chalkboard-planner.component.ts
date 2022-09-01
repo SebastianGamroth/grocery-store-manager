@@ -50,7 +50,7 @@ export class ChalkboardPlannerComponent implements OnInit {
   }
 
 
-  drop(event: CdkDragDrop<string[]>) {
+  async drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
@@ -63,20 +63,19 @@ export class ChalkboardPlannerComponent implements OnInit {
     }
     if (event.container.id === 'wahrenhouse') {
       let name: any = 'wahrenhouse';
-      this.service.editFood(name, event.container.data[0]['id']);
-      // console.log(event.container.data[0]['id'])
+      await this.service.editFood(name, event.container.data[event.currentIndex]['id']);
     }
     if (event.container.id === 'monday') {
       let name: any = 'monday';
-      this.service.editFood(name, event.container.data[0]['id']);
+      await this.service.editFood(name, event.container.data[event.currentIndex]['id']);
     }
     if (event.container.id === 'wednesday') {
       let name: any = 'wednesday';
-      this.service.editFood(name, event.container.data[0]['id']);
+      await this.service.editFood(name, event.container.data[event.currentIndex]['id']);
     }
     if (event.container.id === 'friday') {
       let name: any = 'friday';
-      this.service.editFood(name, event.container.data[0]['id']);
+      await this.service.editFood(name, event.container.data[event.currentIndex]['id']);
     }
     if (event.container.id === 'remove') {
       this.boardArray.remove = [];

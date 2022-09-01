@@ -62,6 +62,7 @@ export class DataService {
         this.addNewProductToChalkboard = false;
       }
 
+      // console.log('getAllData')
     });
 
     // Sort timestamp ascending order
@@ -130,15 +131,15 @@ export class DataService {
       chalkboard: name
     };
 
-    setDoc(this.docRef, data, { merge: true })
-      .then(docRef => {
-        console.log("Entire Document has been updated successfully", docRef);
-      })
+    await setDoc(this.docRef, data, { merge: true })
+      // .then(docRef => {
+      //   console.log("Entire Document has been updated successfully", docRef);
+      // })
       .catch(error => {
         console.log(error);
       })
 
-    this.getAllData();
+    await this.getAllData();
   }
 
   deleteFoodFromDoc(id: any) {
@@ -146,7 +147,7 @@ export class DataService {
     this.docRef = doc(this.firestore, "fruits", id);
     deleteDoc(this.docRef).then(() => {
       this.foodsArray = [];
-      this.getAllData();
+      // this.getAllData();
     })
   }
 
