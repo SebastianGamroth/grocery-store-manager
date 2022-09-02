@@ -26,9 +26,19 @@ mat-button-toggle-group {
     width: 100%;
 
     .cardGenusName {
+        display: flex;
+        align-items: center;
         width: 80px;
         margin: 6px;
     }
+}
+
+.image {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-right: 6px;
 }
 
 ::ng-deep .mat-tooltip {

@@ -13,6 +13,7 @@ export class Foods {
     };
 
     id: string;
+    img: any;
     genus: string;
     name: string;
     price: string;
@@ -25,6 +26,7 @@ export class Foods {
 
     constructor(obj?: any) {
         this.id = obj ? obj.id : '';
+        this.img = obj ? obj.img : '';
         this.genus = obj ? obj.genus : '';
         this.name = obj ? obj.name : '';
         this.price = obj ? obj.price : '';
@@ -40,6 +42,7 @@ export class Foods {
     public toJSON() {
         return {
             id: this.id,
+            img: this.img,
             genus: this.genus,
             name: this.name,
             price: this.price,

@@ -1,6 +1,30 @@
 <div class="mainContainer">
 
+
+
     <form class="example-form">
+
+        <div>
+            <div class="searchContainer">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Bilder</mat-label>
+                    <input [(ngModel)]="service.searchImage" name="name" matInput placeholder="text..." value="">
+                </mat-form-field>
+
+                <div class="example-button-row">
+                    <button mat-raised-button (click)="getImage()" color="primary">Search</button>
+                </div>
+            </div>
+
+            <div class="imageContainer">
+                <mat-button-toggle-group *ngFor="let img of image" name="fontStyle" aria-label="Font Style">
+                    <mat-button-toggle value="bold" (click)="selectImage(img)"><img class="imageSearch" src={{img}}></mat-button-toggle>
+                </mat-button-toggle-group>
+            </div>
+        </div>
+        <!-- <img class="imageSearch" *ngFor="let img of image" src={{img}}> -->
+
+
 
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Genus</mat-label>

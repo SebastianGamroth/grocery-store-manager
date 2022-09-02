@@ -29,6 +29,7 @@ import { EditListComponent } from './edit-list/edit-list.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogAddEditComponent } from './dialog-add-edit/dialog-add-edit.component';
 import { StartInfoComponent } from './start-info/start-info.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { StartInfoComponent } from './start-info/start-info.component';
     DragDropModule,
     MatBadgeModule,
     MatTooltipModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

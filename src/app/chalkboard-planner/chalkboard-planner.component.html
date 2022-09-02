@@ -4,7 +4,10 @@
         <h2>Warehouse</h2>
         <div id="wahrenhouse" cdkDropList [cdkDropListData]="boardArray.wahrenhouse" class="example-list"
             (cdkDropListDropped)="drop($event)">
-            <div class="example-box" *ngFor="let item of boardArray.wahrenhouse" cdkDrag>{{item['name']}}</div>
+            <div class="example-box" *ngFor="let item of boardArray.wahrenhouse" cdkDrag>
+                <img class="image" src="{{item['img']}}">
+                {{item['name']}}
+            </div>
         </div>
     </div>
 
@@ -12,7 +15,10 @@
         <h2>Monday</h2>
         <div id="monday" cdkDropList [cdkDropListData]="boardArray['monday']" class="example-list"
             (cdkDropListDropped)="drop($event)">
-            <div class="example-box" *ngFor="let item of boardArray['monday']" cdkDrag>{{item['name']}}</div>
+            <div class="example-box" *ngFor="let item of boardArray['monday']" cdkDrag>
+                <img class="image" src="{{item['img']}}">
+                {{item['name']}}
+            </div>
         </div>
     </div>
 
@@ -20,7 +26,10 @@
         <h2>Wednesday</h2>
         <div id="wednesday" cdkDropList [cdkDropListData]="boardArray['wednesday']" class="example-list"
             (cdkDropListDropped)="drop($event)">
-            <div class="example-box" *ngFor="let item of boardArray['wednesday']" cdkDrag>{{item['name']}}</div>
+            <div class="example-box" *ngFor="let item of boardArray['wednesday']" cdkDrag>
+                <img class="image" src="{{item['img']}}">
+                {{item['name']}}
+            </div>
         </div>
     </div>
 
@@ -28,7 +37,10 @@
         <h2>Friday</h2>
         <div id="friday" cdkDropList [cdkDropListData]="boardArray['friday']" class="example-list"
             (cdkDropListDropped)="drop($event)">
-            <div class="example-box" *ngFor="let item of boardArray['friday']" cdkDrag>{{item['name']}}</div>
+            <div class="example-box" *ngFor="let item of boardArray['friday']" cdkDrag>
+                <img class="image" src="{{item['img']}}">
+                {{item['name']}}
+            </div>
         </div>
     </div>
 
@@ -36,7 +48,10 @@
         <h2>Remove</h2>
         <div id="remove" cdkDropList [cdkDropListData]="boardArray['remove']" class="example-list"
             (cdkDropListDropped)="drop($event)">
-            <div class="example-box" *ngFor="let item of boardArray['remove']" cdkDrag>{{item['id']}}</div>
+            <div class="example-box" *ngFor="let item of boardArray['remove']" cdkDrag>
+                <img class="image" src="{{item['img']}}">
+                {{item['id']}}
+            </div>
         </div>
     </div>
 

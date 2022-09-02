@@ -46,7 +46,7 @@ export class ChalkboardPlannerComponent implements OnInit {
       this.boardArray.friday.push(element);
     });
 
-    console.log(this.boardArray)
+    // console.log(this.boardArray)
   }
 
 

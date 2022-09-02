@@ -1,10 +1,12 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { addDoc, collection, deleteDoc, doc, Firestore, getDoc, getDocs, setDoc } from '@angular/fire/firestore';
+import { addDoc, collection, deleteDoc, doc, Firestore, getDocs, setDoc } from '@angular/fire/firestore';
 import { Foods } from '../models/foods.class';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class DataService {
 
   foodsClass = new Foods();
@@ -29,7 +31,18 @@ export class DataService {
     'vegetables': []
   }
 
-  constructor(private firestore: Firestore) { }
+  // pixabay
+  url: any;
+  API_KEY = '27740480-24a00016072f5bb51dc30b94a';
+  searchImage = 'apple';
+
+  constructor(private firestore: Firestore, private http: HttpClient) { }
+
+  getApiPicture() {
+    this.url = `https://pixabay.com/api/?key=${this.API_KEY}&q=${this.searchImage}&per_page=5&image_type=photo&category=food&pretty=true`;
+    return this.http.get(this.url);
+  }
+
 
   async getAllData() {
     this.foodsArray = [];
@@ -40,6 +53,7 @@ export class DataService {
 
     this.docsSnap.forEach((doc: any) => {
       this.foodsClass.id = doc.id;
+      this.foodsClass.img = doc.data()['img'];
       this.foodsClass.name = doc.data()['name'];
       this.foodsClass.price = doc.data()['price'];
       this.foodsClass.genus = doc.data()['genus'];
@@ -53,16 +67,12 @@ export class DataService {
       this.foodsClass.chalkboard = doc.data()['chalkboard'];
 
       this.foodsArray.push(this.foodsClass.toJSON());
-      // console.log(this.foodsClass.id);
 
       if (this.addNewProductToChalkboard == doc.data()['id']) {
         this.addFoodsToArray.push(doc.data()['name']);
-        // console.log(this.addFoodsToArray)
 
         this.addNewProductToChalkboard = false;
       }
-
-      // console.log('getAllData')
     });
 
     // Sort timestamp ascending order
@@ -122,8 +132,9 @@ export class DataService {
   //   this.getAllData();
   // }
 
+
   async editFood(name: string, id: any) {
-    console.log(name, id)
+    // console.log(name, id)
 
     this.docRef = doc(this.firestore, "fruits", id);
 
@@ -142,14 +153,15 @@ export class DataService {
     await this.getAllData();
   }
 
+
   deleteFoodFromDoc(id: any) {
     console.log(id)
     this.docRef = doc(this.firestore, "fruits", id);
     deleteDoc(this.docRef).then(() => {
       this.foodsArray = [];
-      // this.getAllData();
     })
   }
+
 
   filterGenus() {
     let fruits = this.foodsArray.filter(t => t['genus'] == 'Fruits');

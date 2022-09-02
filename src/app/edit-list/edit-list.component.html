@@ -6,7 +6,9 @@
             <table>
                 <th>Fruits</th>
                 <tr *ngFor="let doc of service.filterGenusGroup.fruits">
-                    <td>{{ doc.name }} {{ doc.price }}
+                    <td>
+                        <img class="image" src="{{doc['img']}}">
+                        {{ doc.name }} {{ doc.price }}
                         <div class="example-button-row">
                             <button mat-raised-button (click)=" deleteFoodFromDoc(doc.id)" color="primary">Del</button>
                         </div>
@@ -19,7 +21,9 @@
             <table>
                 <th>Vegetables</th>
                 <tr *ngFor="let doc of service.filterGenusGroup.vegetables">
-                    <td>{{ doc.name }} {{ doc.price }}
+                    <td>
+                        <img class="image" src="{{doc['img']}}">
+                        {{ doc.name }} {{ doc.price }}
                         <div class="example-button-row">
                             <button mat-raised-button (click)=" deleteFoodFromDoc(doc.id)" color="primary">Del</button>
                         </div>
