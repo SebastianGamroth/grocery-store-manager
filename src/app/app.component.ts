@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataService } from './services/data.service';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +10,5 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'grocery-store-manager';
 
-  constructor(public router: Router) { }
+  constructor(public router: Router, public service: DataService) { }
 }

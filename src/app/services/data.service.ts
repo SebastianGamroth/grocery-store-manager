@@ -36,7 +36,13 @@ export class DataService {
   API_KEY = '27740480-24a00016072f5bb51dc30b94a';
   searchImage = 'apple';
 
+  drawer: boolean = true;
+
   constructor(private firestore: Firestore, private http: HttpClient) { }
+
+  openOrCloseSideBar() {
+    this.drawer = !this.drawer;
+  }
 
   getApiPicture() {
     this.url = `https://pixabay.com/api/?key=${this.API_KEY}&q=${this.searchImage}&per_page=5&image_type=photo&category=food&pretty=true`;
