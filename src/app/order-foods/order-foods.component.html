@@ -1,0 +1,39 @@
+<div class="mainContainer">
+
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style" value="fruits">
+        <mat-button-toggle value="fruits" (click)="changeGenusFilter('Obst')">Obst</mat-button-toggle>
+        <mat-button-toggle value="vegetables" (click)="changeGenusFilter('Gemüse')">Gemüse</mat-button-toggle>
+    </mat-button-toggle-group>
+
+    <mat-form-field appearance="standard">
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+    </mat-form-field>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef> Produkt </th>
+            <td mat-cell *matCellDef="let element"> {{element.product}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Euro </th>
+            <td mat-cell *matCellDef="let element"> {{element.euro}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="weight">
+            <th mat-header-cell *matHeaderCellDef> Einheit </th>
+            <td mat-cell *matCellDef="let element"> {{element.unit}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="symbol">
+            <th mat-header-cell *matHeaderCellDef> Herkunft </th>
+            <td mat-cell *matCellDef="let element"> {{element.origin}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="openDialog(row)"></tr>
+    </table>
+
+</div>

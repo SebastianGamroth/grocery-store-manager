@@ -1,0 +1,376 @@
+[
+    {
+        "Gemüse": [
+            {
+                "Produkt": "Aubergine",
+                "Preis in Euro": "0,73",
+                "Einheit": "100g",
+                "Herkunft": "Spanien"
+            },
+            {
+                "Produkt": "Batate",
+                "Preis in Euro": "4,29",
+                "Einheit": "kg",
+                "Herkunft": "Spanien"
+            },
+            {
+                "Produkt": "Blumenkohl",
+                "Preis in Euro": "5,09",
+                "Einheit": "Stück",
+                "Herkunft": "Frankreich"
+            },
+            {
+                "Produkt": "Chicoree",
+                "Preis in Euro": "1,23",
+                "Einheit": "100g",
+                "Herkunft": "Deutschland"
+            },
+            {
+                "Produkt": "Chinakohl",
+                "Preis in Euro": "6,39",
+                "Einheit": "kg",
+                "Herkunft": "Spanien"
+            },
+            {
+                "Produkt": "Dill",
+                "Preis in Euro": "2,69",
+                "Einheit": "Bund",
+                "Herkunft": "Italien"
+            },
+            {
+                "Produkt": "Fenchel",
+                "Preis in Euro": "4,39",
+                "Einheit": "kg",
+                "Herkunft": "Italien"
+            },
+            {
+                "Produkt": "Gurke, Mini-",
+                "Preis in Euro": "0,97",
+                "Einheit": "100g",
+                "Herkunft": "Griechenland"
+            },
+            {
+                "Produkt": "Gurken, Schlangen-",
+                "Preis in Euro": "2,19",
+                "Einheit": "Stück",
+                "Herkunft": "Spanien"
+            },
+            {
+                "Produkt": "Kartoffel, 12,5kg zum Einlagern, alle Sorten",
+                "Preis in Euro": "29,99",
+                "Einheit": "12,5 kg",
+                "Herkunft": "Deutschland"
+            },
+            {
+                "Produkt": "Kartoffel, festkochend",
+                "Preis in Euro": "3,29",
+                "Einheit": "kg",
+                "Herkunft": "Deutschland"
+            },
+            {
+                "Produkt": "Kartoffel, mehlig",
+                "Preis in Euro": "3,29",
+                "Einheit": "kg",
+                "Herkunft": "Deutschland"
+            },
+            {
+                "Produkt": "Kartoffel, vorw. festkochend",
+                "Preis in Euro": "3,29",
+                "Einheit": "kg",
+                "Herkunft": "Deutschland"
+            },
+            {
+                "Produkt": "Knoblauch",
+                "Preis in Euro": "1,23",
+                "Einheit": "100g",
+                "Herkunft": "Spanien"
+            },
+            {
+                "Produkt": "Kohlrabi",
+                "Preis in Euro": "1,99",
+                "Einheit": "Stück",
+                "Herkunft": "Spanien"
+            },
+            {
+                "Produkt": "Kürbis, Hokkaido",
+                "Preis in Euro": "3,39",
+                "Einheit": "kg",
+                "Herkunft": "Deutschland"
+            },
+            {
+                "Produkt": "Meerrettich",
+                "Preis in Euro": "1,76",
+                "Einheit": "100g",
+                "Herkunft": "Niederlande"
+            },
+            {
+                "Produkt": "Paprika, blockig",
+                "Preis in Euro": "0,7",
+                "Einheit": "100g",
+                "Herkunft": "Spanien"
+            },
+            {
+                "Produkt": "Paprika, spitz",
+                "Preis in Euro": "0,7",
+                "Einheit": "100g",
+                "Herkunft": "Griechenland"
+            },
+            {
+                "Produkt": "Pilz, Champignons",
+                "Preis in Euro": "1,25",
+                "Einheit": "100g",
+                "Herkunft": "Sachsen"
+            },
+            {
+                "Produkt": "Pilz, Shitake-",
+                "Preis in Euro": "2,74",
+                "Einheit": "100g",
+                "Herkunft": "Deutschland"
+            },
+            {
+                "Produkt": "Rettich, Japan-, weißer langer",
+                "Preis in Euro": "5,49",
+                "Einheit": "kg",
+                "Herkunft": "Deutschland"
+            },
+            {
+                "Produkt": "Rosenkohl",
+                "Preis in Euro": "1,37",
+                "Einheit": "100g",
+                "Herkunft": "Frankreich"
+            },
+            {
+                "Produkt": "Rote Bete, küchenfertig, Vakuum",
+                "Preis in Euro": "3,89",
+                "Einheit": "500g",
+                "Herkunft": "Deutschland"
+            },
+            {
+                "Produkt": "Salat, Kopf-",
+                "Preis in Euro": "2,39",
+                "Einheit": "Stück",
+                "Herkunft": "Frankreich"
+            },
+            {
+                "Produkt": "Salat, Rucola",
+                "Preis in Euro": "2,94",
+                "Einheit": "100g",
+                "Herkunft": "Italien"
+            },
+            {
+                "Produkt": "Sellerie, Stangen-",
+                "Preis in Euro": "2,69",
+                "Einheit": "Stück",
+                "Herkunft": "Spanien"
+            },
+            {
+                "Produkt": "Spitzkohl",
+                "Preis in Euro": "4,59",
+                "Einheit": "kg",
+                "Herkunft": "Spanien"
+            },
+            {
+                "Produkt": "Tomate, Cherry-Strauch-",
+                "Preis in Euro": "0,69",
+                "Einheit": "100g",
+                "Herkunft": "Spanien"
+            },
+            {
+                "Produkt": "Tomate, Strauch-",
+                "Preis in Euro": "5,09",
+                "Einheit": "kg",
+                "Herkunft": "Spanien"
+            },
+            {
+                "Produkt": "Wirsing",
+                "Preis in Euro": "4,79",
+                "Einheit": "kg",
+                "Herkunft": "Deutschland"
+            },
+            {
+                "Produkt": "Wurzelpetersilie",
+                "Preis in Euro": "0,73",
+                "Einheit": "100g",
+                "Herkunft": "Deutschland"
+            },
+            {
+                "Produkt": "Zucchini",
+                "Preis in Euro": "0,7",
+                "Einheit": "100g",
+                "Herkunft": "Spanien"
+            },
+            {
+                "Produkt": "Zuckermais, küchenfertig Vakuum",
+                "Preis in Euro": "4,79",
+                "Einheit": "2 Stück",
+                "Herkunft": "Frankreich"
+            }
+        ]
+    },
+    {
+        "Obst": [
+            {
+                "Produkt": "Ananas",
+                "Preis in Euro": "3,19",
+                "Einheit": "Stück",
+                "Herkunft": "Costa Rica"
+            },
+            {
+                "Produkt": "Apfel, Gala, Elstar, Jonagold, Holsteiner",
+                "Preis in Euro": "5,39",
+                "Einheit": "kg",
+                "Herkunft": "Deutschland"
+            },
+            {
+                "Produkt": "Avocado, Hass",
+                "Preis in Euro": "0,83",
+                "Einheit": "100g",
+                "Herkunft": "Spanien"
+            },
+            {
+                "Produkt": "Banane",
+                "Preis in Euro": "3,89",
+                "Einheit": "kg",
+                "Herkunft": "Dominikanische Republik"
+            },
+            {
+                "Produkt": "Birnen",
+                "Preis in Euro": "6,79",
+                "Einheit": "kg",
+                "Herkunft": "Deutschland"
+            },
+            {
+                "Produkt": "Clementine, Satsuma",
+                "Preis in Euro": "4,09",
+                "Einheit": "kg",
+                "Herkunft": "Spanien"
+            },
+            {
+                "Produkt": "Datteln-, Riesen-",
+                "Preis in Euro": "2,34",
+                "Einheit": "100g",
+                "Herkunft": "Israel"
+            },
+            {
+                "Produkt": "Feigen, frisch",
+                "Preis in Euro": "2,86",
+                "Einheit": "100g",
+                "Herkunft": "Spanien"
+            },
+            {
+                "Produkt": "Granatapfel",
+                "Preis in Euro": "0,69",
+                "Einheit": "100g",
+                "Herkunft": "Spanien"
+            },
+            {
+                "Produkt": "Grapefruit, rot",
+                "Preis in Euro": "2,69",
+                "Einheit": "Stück",
+                "Herkunft": "Südafrika"
+            },
+            {
+                "Produkt": "Heidelbeeren",
+                "Preis in Euro": "5,59",
+                "Einheit": "125g",
+                "Herkunft": "Portugal"
+            },
+            {
+                "Produkt": "Himbeeren",
+                "Preis in Euro": "5,29",
+                "Einheit": "125g",
+                "Herkunft": "Portugal"
+            },
+            {
+                "Produkt": "Ingwer",
+                "Preis in Euro": "1,96",
+                "Einheit": "100g",
+                "Herkunft": "Uganda"
+            },
+            {
+                "Produkt": "Kiwi, gold",
+                "Preis in Euro": "1,19",
+                "Einheit": "Stück",
+                "Herkunft": "Italien"
+            },
+            {
+                "Produkt": "Kiwi, grün",
+                "Preis in Euro": "0,78",
+                "Einheit": "100g",
+                "Herkunft": "Italien"
+            },
+            {
+                "Produkt": "Kurkuma",
+                "Preis in Euro": "1,32",
+                "Einheit": "100g",
+                "Herkunft": "Peru"
+            },
+            {
+                "Produkt": "Mango",
+                "Preis in Euro": "5,79",
+                "Einheit": "kg",
+                "Herkunft": "Spanien"
+            },
+            {
+                "Produkt": "Maracuja",
+                "Preis in Euro": "2,54",
+                "Einheit": "100g",
+                "Herkunft": "Spanien"
+            },
+            {
+                "Produkt": "Nüsse, Erd-",
+                "Preis in Euro": "1,09",
+                "Einheit": "100g",
+                "Herkunft": "Ägypten"
+            },
+            {
+                "Produkt": "Nüsse, Hasel-",
+                "Preis in Euro": "1,56",
+                "Einheit": "100g",
+                "Herkunft": "Spanien"
+            },
+            {
+                "Produkt": "Orangen, Navelina",
+                "Preis in Euro": "5,19",
+                "Einheit": "kg",
+                "Herkunft": "Spanien"
+            },
+            {
+                "Produkt": "Orangen, Saft",
+                "Preis in Euro": "5,09",
+                "Einheit": "kg",
+                "Herkunft": "Spanien"
+            },
+            {
+                "Produkt": "Pflaumen, getrocknet, lose",
+                "Preis in Euro": "2,29",
+                "Einheit": "100g",
+                "Herkunft": "Kirgistan"
+            },
+            {
+                "Produkt": "Pflaumen, rot",
+                "Preis in Euro": "0,78",
+                "Einheit": "100g",
+                "Herkunft": "Spanien"
+            },
+            {
+                "Produkt": "Trauben, ohne Kerne",
+                "Preis in Euro": "0,73",
+                "Einheit": "100g",
+                "Herkunft": "Italien"
+            },
+            {
+                "Produkt": "Trauben,mit Kernen",
+                "Preis in Euro": "4,79",
+                "Einheit": "kg",
+                "Herkunft": "Italien"
+            },
+            {
+                "Produkt": "Zitronen",
+                "Preis in Euro": "0,68",
+                "Einheit": "100g",
+                "Herkunft": "Italien"
+            }
+        ]
+    }
+]

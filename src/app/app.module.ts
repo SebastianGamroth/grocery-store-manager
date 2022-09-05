@@ -30,6 +30,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { DialogAddEditComponent } from './dialog-add-edit/dialog-add-edit.component';
 import { StartInfoComponent } from './start-info/start-info.component';
 import { HttpClientModule } from '@angular/common/http';
+import { OrderFoodsComponent } from './order-foods/order-foods.component';
+import {MatTableModule} from '@angular/material/table';
+import { DialogOrderComponent } from './dialog-order/dialog-order.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,9 @@ import { HttpClientModule } from '@angular/common/http';
     ChalkboardPlannerComponent,
     EditListComponent,
     DialogAddEditComponent,
-    StartInfoComponent
+    StartInfoComponent,
+    OrderFoodsComponent,
+    DialogOrderComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +68,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatBadgeModule,
     MatTooltipModule,
     MatDialogModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

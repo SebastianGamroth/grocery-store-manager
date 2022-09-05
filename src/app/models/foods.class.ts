@@ -1,9 +1,13 @@
 export class Foods {
 
     foods = [
-        { value: 'Fruits', viewValue: 'Fruits' },
+        { value: 'Fruits', viewValue: 'Obst' },
         { value: 'Vegetables', viewValue: 'Vegetables' },
     ];
+    // foods = [
+    //     { value: 'Fruits', viewValue: 'Fruits' },
+    //     { value: 'Vegetables', viewValue: 'Vegetables' },
+    // ];
 
     boardArray: any = {
         'wahrenhouse': [],
@@ -24,6 +28,12 @@ export class Foods {
     timeStemp: any;
     chalkboard: any;
 
+    product: string;
+    euro: number;
+    unit: string;
+    origin: string;
+
+
     constructor(obj?: any) {
         this.id = obj ? obj.id : '';
         this.img = obj ? obj.img : '';
@@ -36,6 +46,11 @@ export class Foods {
         this.fat = obj ? obj.fat : '';
         this.timeStemp = obj ? obj.timeStemp : '';
         this.chalkboard = obj ? obj.chalkboard : '';
+
+        this.product = obj ? obj.product : '';
+        this.euro = obj ? obj.euro : '';
+        this.unit = obj ? obj.unit : '';
+        this.origin = obj ? obj.origin : '';
     }
 
 
@@ -51,7 +66,12 @@ export class Foods {
             protein: this.protein,
             fat: this.fat,
             timeStemp: this.timeStemp,
-            chalkboard: this.chalkboard
+            chalkboard: this.chalkboard,
+
+            product: this.product,
+            euro: this.euro,
+            unit: this.unit,
+            origin: this.origin
         }
     }
 }

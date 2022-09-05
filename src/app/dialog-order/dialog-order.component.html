@@ -1,0 +1,53 @@
+<div class="mainContainer">
+
+    <form class="example-form">
+
+        <div>
+            <!-- <div class="searchContainer">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Bilder</mat-label>
+                    <input [(ngModel)]="service.searchImage" name="name" matInput placeholder="text..." value="">
+                </mat-form-field>
+
+                <div class="example-button-row">
+                    <button mat-raised-button (click)="getImage()" color="primary">Search</button>
+                </div>
+            </div> -->
+
+            <div class="imageContainer">
+                <mat-button-toggle-group *ngFor="let img of image" name="fontStyle" aria-label="Font Style">
+                    <mat-button-toggle value="bold" (click)="selectImage(img)"><img class="imageSearch" src={{img}}>
+                    </mat-button-toggle>
+                </mat-button-toggle-group>
+            </div>
+        </div>
+        <!-- <img class="imageSearch" *ngFor="let img of image" src={{img}}> -->
+
+        <mat-card>
+            {{service.orderCurrentFoods['euro']}} Euro
+            <h2>{{service.orderCurrentFoods['product']}}</h2>
+            {{service.orderCurrentFoods['unit']}}
+            {{service.orderCurrentFoods['origin']}}
+        </mat-card>
+
+        <mat-card>
+
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Amount</mat-label>
+                <input [(ngModel)]="service.orderPrice" name="name" type="number" min="1" matInput
+                    placeholder="price..." value="">
+            </mat-form-field>
+            {{service.orderCurrentFoods['unit']}}
+            <h3>{{service.result()}} EURO
+            </h3>
+
+        </mat-card>
+
+        <div mat-dialog-actions>
+            <button mat-button (click)="onNoClick()">Cancel</button>
+            <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="addFoodToDoc()">Add</button>
+        </div>
+
+    </form>
+
+</div>

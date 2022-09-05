@@ -1,21 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { AddFoodsComponent } from '../add-foods/add-foods.component';
-import { DataService } from '../services/data.service';
 import { FoodsJson } from '../models/foods.json.class';
+import { DataService } from '../services/data.service';
 
 @Component({
-  selector: 'app-dialog-add-edit',
-  templateUrl: './dialog-add-edit.component.html',
-  styleUrls: ['./dialog-add-edit.component.scss']
+  selector: 'app-dialog-order',
+  templateUrl: './dialog-order.component.html',
+  styleUrls: ['./dialog-order.component.scss']
 })
-export class DialogAddEditComponent implements OnInit {
+export class DialogOrderComponent implements OnInit {
   image: any = [];
   foodsJson = new FoodsJson();
-  
+
   constructor(public service: DataService, public dialogRef: MatDialogRef<AddFoodsComponent>) { }
 
   ngOnInit(): void {
+    this.service.searchImage = this.service.orderCurrentFoods['product'];
+    this.getImage();
   }
 
   onNoClick(): void {
@@ -43,8 +45,7 @@ export class DialogAddEditComponent implements OnInit {
       });
       // console.log(this.image);
     });
-    this.service.searchImage = '';
-    this.image = [];
+    this.service.orderPrice = 1;
   }
 
   hideloader() {
@@ -55,5 +56,6 @@ export class DialogAddEditComponent implements OnInit {
   selectImage(img: any) {
     this.service.foodsClass.img = img;
   }
+
 
 }

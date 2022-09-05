@@ -31,14 +31,36 @@ export class DataService {
     'vegetables': []
   }
 
+  // careerSteps: { img: string; title: number; description: string; }[] =[
+  //   {
+  //     'img': '',
+  //     'title': 0,
+  //     'description': 'Studying Business Mathematics boosted my talent for structured and analytical thinking. I coded my first project with Delphi, solving a problem with Artificial Intelligence.'
+  //   },
+  // ]
+
+  orderCurrentFoods: { product: string; euro: number; unit: string; origin: string }[] = [
+    {
+      'product': '',
+      'euro': 0,
+      'unit': '',
+      'origin': ''
+    }
+  ];
+  orderPrice: any = 1;
+
   // pixabay
   url: any;
   API_KEY = '27740480-24a00016072f5bb51dc30b94a';
-  searchImage = 'apple';
+  searchImage: string = 'apple';
 
   drawer: boolean = true;
 
   constructor(private firestore: Firestore, private http: HttpClient) { }
+
+  result() {
+    return Math.round((this.orderCurrentFoods['euro'].replace(',', '.') * this.orderPrice) * 100) / 100;
+  }
 
   openOrCloseSideBar() {
     this.drawer = !this.drawer;
@@ -48,6 +70,13 @@ export class DataService {
     this.url = `https://pixabay.com/api/?key=${this.API_KEY}&q=${this.searchImage}&per_page=5&image_type=photo&category=food&pretty=true`;
     return this.http.get(this.url);
   }
+
+  // Json
+  getJSON() {
+    let urlJSON: any = 'src/app/models/foods.json';
+    return this.http.get(urlJSON);
+  }
+
 
 
   async getAllData() {
@@ -94,7 +123,7 @@ export class DataService {
     this.foodsClass.protein = '';
     this.foodsClass.fat = '';
 
-    console.log(this.foodsArray);
+    // console.log(this.foodsArray);
   }
 
 

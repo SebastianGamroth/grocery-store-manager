@@ -3,6 +3,7 @@ import { Foods } from '../models/foods.class';
 import { DataService } from '../services/data.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogAddEditComponent } from '../dialog-add-edit/dialog-add-edit.component';
+import { FoodsJson } from '../models/foods.json.class';
 
 @Component({
   selector: 'app-add-foods',
@@ -13,6 +14,7 @@ import { DialogAddEditComponent } from '../dialog-add-edit/dialog-add-edit.compo
 export class AddFoodsComponent implements OnInit {
 
   foodsClass = new Foods();
+  foodsJson = new FoodsJson();
 
   filterGenusArray: any;
 
@@ -26,6 +28,9 @@ export class AddFoodsComponent implements OnInit {
     await this.service.getAllData();
 
     this.changeGenusFilter('Fruits');
+
+    // console.log(this.foodsJson.foodsJson)
+
   }
 
   changeGenusFilter(value: any) {
