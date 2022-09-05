@@ -2,7 +2,7 @@
 
     <form class="example-form">
 
-        <div>
+        <mat-card>
             <!-- <div class="searchContainer">
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Bilder</mat-label>
@@ -15,32 +15,40 @@
             </div> -->
 
             <div class="imageContainer">
-                <mat-button-toggle-group *ngFor="let img of image" name="fontStyle" aria-label="Font Style">
-                    <mat-button-toggle value="bold" (click)="selectImage(img)"><img class="imageSearch" src={{img}}>
+                <!-- <mat-label>Chose Image</mat-label> -->
+                <mat-button-toggle-group class="imgWidth" *ngFor="let img of image" name="fontStyle"
+                    aria-label="Font Style">
+                    <mat-button-toggle value="bold" (click)="selectImage(img)">
+                        <img class="imageSearch" src={{img}}>
                     </mat-button-toggle>
                 </mat-button-toggle-group>
             </div>
-        </div>
+        </mat-card>
         <!-- <img class="imageSearch" *ngFor="let img of image" src={{img}}> -->
 
         <mat-card>
-            {{service.orderCurrentFoods['euro']}} Euro
-            <h2>{{service.orderCurrentFoods['product']}}</h2>
-            {{service.orderCurrentFoods['unit']}}
-            {{service.orderCurrentFoods['origin']}}
+            <mat-grid-list cols="2" rowHeight="1:1">
+                <mat-grid-tile class="orderImage">
+                    <h3 *ngIf="service.foodsClass.img===''">Chose image!</h3>
+                    <img *ngIf="service.foodsClass.img" src={{service.foodsClass.img}}>
+                </mat-grid-tile>
+                <mat-grid-tile class="orderDescription">
+                    {{service.orderCurrentFoods['euro']}} Euro
+                    <h2>{{service.orderCurrentFoods['product']}}</h2>
+                    {{service.orderCurrentFoods['unit']}}<br>
+                    {{service.orderCurrentFoods['origin']}}
+                </mat-grid-tile>
+            </mat-grid-list>
         </mat-card>
 
-        <mat-card>
-
+        <mat-card class="amountContainer">
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Amount</mat-label>
                 <input [(ngModel)]="service.orderPrice" name="name" type="number" min="1" matInput
                     placeholder="price..." value="">
             </mat-form-field>
             {{service.orderCurrentFoods['unit']}}
-            <h3>{{service.result()}} EURO
-            </h3>
-
+            <h3>{{service.result()}} EURO</h3>
         </mat-card>
 
         <div mat-dialog-actions>

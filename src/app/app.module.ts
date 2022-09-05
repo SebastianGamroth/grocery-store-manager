@@ -31,8 +31,9 @@ import { DialogAddEditComponent } from './dialog-add-edit/dialog-add-edit.compon
 import { StartInfoComponent } from './start-info/start-info.component';
 import { HttpClientModule } from '@angular/common/http';
 import { OrderFoodsComponent } from './order-foods/order-foods.component';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
 import { DialogOrderComponent } from './dialog-order/dialog-order.component';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { DialogOrderComponent } from './dialog-order/dialog-order.component';
     MatTooltipModule,
     MatDialogModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

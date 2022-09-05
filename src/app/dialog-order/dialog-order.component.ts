@@ -16,6 +16,7 @@ export class DialogOrderComponent implements OnInit {
   constructor(public service: DataService, public dialogRef: MatDialogRef<AddFoodsComponent>) { }
 
   ngOnInit(): void {
+    this.service.foodsClass.img = '';
     this.service.searchImage = this.service.orderCurrentFoods['product'];
     this.getImage();
   }
