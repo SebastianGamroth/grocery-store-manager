@@ -25,8 +25,8 @@ export class DialogOrderComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  addFoodToDoc() {
-    this.service.addFoodToDoc('wahrenhouse');
+  orderFood() {
+    this.service.orderFood('wahrenhouse');
 
     // setTimeout(() => {
     //   console.log(this.service.currentGenus)

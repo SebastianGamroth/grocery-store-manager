@@ -65,37 +65,13 @@ export class FoodsJson {
                 "origin": "Italien"
             },
             {
-                "product": "Gurke, Mini-",
-                "euro": "0,97",
-                "unit": "100g",
-                "origin": "Griechenland"
-            },
-            {
-                "product": "Gurken, Schlangen-",
+                "product": "Gurken",
                 "euro": "2,19",
                 "unit": "Stück",
                 "origin": "Spanien"
             },
             {
-                "product": "Kartoffel, 12,5kg zum Einlagern, alle Sorten",
-                "euro": "29,99",
-                "unit": "12,5 kg",
-                "origin": "Deutschland"
-            },
-            {
-                "product": "Kartoffel, festkochend",
-                "euro": "3,29",
-                "unit": "kg",
-                "origin": "Deutschland"
-            },
-            {
-                "product": "Kartoffel, mehlig",
-                "euro": "3,29",
-                "unit": "kg",
-                "origin": "Deutschland"
-            },
-            {
-                "product": "Kartoffel, vorw. festkochend",
+                "product": "Kartoffel",
                 "euro": "3,29",
                 "unit": "kg",
                 "origin": "Deutschland"
@@ -113,7 +89,7 @@ export class FoodsJson {
                 "origin": "Spanien"
             },
             {
-                "product": "Kürbis, Hokkaido",
+                "product": "Kürbis",
                 "euro": "3,39",
                 "unit": "kg",
                 "origin": "Deutschland"
@@ -125,31 +101,25 @@ export class FoodsJson {
                 "origin": "Niederlande"
             },
             {
-                "product": "Paprika, blockig",
+                "product": "Paprika",
                 "euro": "0,7",
                 "unit": "100g",
                 "origin": "Spanien"
             },
             {
-                "product": "Paprika, spitz",
-                "euro": "0,7",
-                "unit": "100g",
-                "origin": "Griechenland"
-            },
-            {
-                "product": "Pilz, Champignons",
+                "product": "Champignons",
                 "euro": "1,25",
                 "unit": "100g",
                 "origin": "Sachsen"
             },
             {
-                "product": "Pilz, Shitake-",
+                "product": "Shitake",
                 "euro": "2,74",
                 "unit": "100g",
                 "origin": "Deutschland"
             },
             {
-                "product": "Rettich, Japan-, weißer langer",
+                "product": "Rettich",
                 "euro": "5,49",
                 "unit": "kg",
                 "origin": "Deutschland"
@@ -161,25 +131,25 @@ export class FoodsJson {
                 "origin": "Frankreich"
             },
             {
-                "product": "Rote Bete, küchenfertig, Vakuum",
+                "product": "Bete",
                 "euro": "3,89",
                 "unit": "500g",
                 "origin": "Deutschland"
             },
             {
-                "product": "Salat, Kopf-",
+                "product": "Kopfsalat",
                 "euro": "2,39",
                 "unit": "Stück",
                 "origin": "Frankreich"
             },
             {
-                "product": "Salat, Rucola",
+                "product": "Rucola",
                 "euro": "2,94",
                 "unit": "100g",
                 "origin": "Italien"
             },
             {
-                "product": "Sellerie, Stangen-",
+                "product": "Stangensellerie",
                 "euro": "2,69",
                 "unit": "Stück",
                 "origin": "Spanien"
@@ -191,15 +161,9 @@ export class FoodsJson {
                 "origin": "Spanien"
             },
             {
-                "product": "Tomate, Cherry-Strauch-",
+                "product": "Tomaten",
                 "euro": "0,69",
                 "unit": "100g",
-                "origin": "Spanien"
-            },
-            {
-                "product": "Tomate, Strauch-",
-                "euro": "5,09",
-                "unit": "kg",
                 "origin": "Spanien"
             },
             {
@@ -221,7 +185,7 @@ export class FoodsJson {
                 "origin": "Spanien"
             },
             {
-                "product": "Zuckermais, küchenfertig Vakuum",
+                "product": "Zuckermais",
                 "euro": "4,79",
                 "unit": "2 Stück",
                 "origin": "Frankreich"
@@ -235,13 +199,13 @@ export class FoodsJson {
                 "origin": "Costa Rica"
             },
             {
-                "product": "Apfel, Gala, Elstar, Jonagold",
+                "product": "Apfel",
                 "euro": "5,39",
                 "unit": "kg",
                 "origin": "Deutschland"
             },
             {
-                "product": "Avocado, Hass",
+                "product": "Avocado",
                 "euro": "0,83",
                 "unit": "100g",
                 "origin": "Spanien"
@@ -259,19 +223,19 @@ export class FoodsJson {
                 "origin": "Deutschland"
             },
             {
-                "product": "Clementine, Satsuma",
+                "product": "Clementine",
                 "euro": "4,09",
                 "unit": "kg",
                 "origin": "Spanien"
             },
             {
-                "product": "Datteln-, Riesen-",
+                "product": "Datteln",
                 "euro": "2,34",
                 "unit": "100g",
                 "origin": "Israel"
             },
             {
-                "product": "Feigen, frisch",
+                "product": "Feigen",
                 "euro": "2,86",
                 "unit": "100g",
                 "origin": "Spanien"
@@ -283,7 +247,7 @@ export class FoodsJson {
                 "origin": "Spanien"
             },
             {
-                "product": "Grapefruit, rot",
+                "product": "Grapefruit",
                 "euro": "2,69",
                 "unit": "Stück",
                 "origin": "Südafrika"
@@ -307,15 +271,9 @@ export class FoodsJson {
                 "origin": "Uganda"
             },
             {
-                "product": "Kiwi, gold",
+                "product": "Kiwi",
                 "euro": "1,19",
                 "unit": "Stück",
-                "origin": "Italien"
-            },
-            {
-                "product": "Kiwi, grün",
-                "euro": "0,78",
-                "unit": "100g",
                 "origin": "Italien"
             },
             {
@@ -337,51 +295,33 @@ export class FoodsJson {
                 "origin": "Spanien"
             },
             {
-                "product": "Nüsse, Erd-",
+                "product": "Erdnüsse",
                 "euro": "1,09",
                 "unit": "100g",
                 "origin": "Ägypten"
             },
             {
-                "product": "Nüsse, Hasel-",
+                "product": "Haselnüsse",
                 "euro": "1,56",
                 "unit": "100g",
                 "origin": "Spanien"
             },
             {
-                "product": "Orangen, Navelina",
+                "product": "Orangen",
                 "euro": "5,19",
                 "unit": "kg",
                 "origin": "Spanien"
             },
             {
-                "product": "Orangen, Saft",
-                "euro": "5,09",
-                "unit": "kg",
-                "origin": "Spanien"
-            },
-            {
-                "product": "Pflaumen, getrocknet, lose",
+                "product": "Pflaumen",
                 "euro": "2,29",
                 "unit": "100g",
                 "origin": "Kirgistan"
             },
             {
-                "product": "Pflaumen, rot",
-                "euro": "0,78",
-                "unit": "100g",
-                "origin": "Spanien"
-            },
-            {
-                "product": "Trauben, ohne Kerne",
+                "product": "Trauben",
                 "euro": "0,73",
                 "unit": "100g",
-                "origin": "Italien"
-            },
-            {
-                "product": "Trauben,mit Kernen",
-                "euro": "4,79",
-                "unit": "kg",
                 "origin": "Italien"
             },
             {

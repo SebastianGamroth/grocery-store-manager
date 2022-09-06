@@ -83,7 +83,7 @@ export class DataService {
     this.foodsArray = [];
     this.addFoodsToArray = [];
 
-    this.colRef = collection(this.firestore, "fruits");
+    this.colRef = collection(this.firestore, "food-collection");
     this.docsSnap = await getDocs(this.colRef);
 
     this.docsSnap.forEach((doc: any) => {
@@ -101,10 +101,15 @@ export class DataService {
 
       this.foodsClass.chalkboard = doc.data()['chalkboard'];
 
+      this.foodsClass.product = doc.data()['product'];
+      this.foodsClass.euro = doc.data()['euro'];
+      this.foodsClass.unit = doc.data()['unit'];
+      this.foodsClass.origin = doc.data()['origin'];
+
       this.foodsArray.push(this.foodsClass.toJSON());
 
       if (this.addNewProductToChalkboard == doc.data()['id']) {
-        this.addFoodsToArray.push(doc.data()['name']);
+        this.addFoodsToArray.push(doc.data()['product']);
 
         this.addNewProductToChalkboard = false;
       }
@@ -123,7 +128,7 @@ export class DataService {
     this.foodsClass.protein = '';
     this.foodsClass.fat = '';
 
-    // console.log(this.foodsArray);
+    console.log(this.foodsArray);
   }
 
 
@@ -146,9 +151,29 @@ export class DataService {
       })
   }
 
+  orderFood(changeCalkboard: any) {
+    this.timeStemp = new Date;
+    this.foodsClass.timeStemp = this.timeStemp.getTime();
+
+    this.foodsClass.chalkboard = changeCalkboard;
+
+    addDoc(this.colRef, this.foodsClass.toJSON())
+      .then(() => {
+        this.foodsArray = [];
+        this.addNewProductToChalkboard = this.foodsClass.id;
+        this.currentGenus = this.foodsClass.genus;
+        // this.currentGenus = this.orderCurrentFoods['product'];
+        this.getAllData();
+        // console.log(this.foodsClass.genus)
+      })
+      .catch(error => {
+        console.log(error);
+      })
+  }
+
   // async editFood(name: string, id: any) {
   //   console.log(name, id)
-  //   this.docRef = doc(this.firestore, "fruits", id);
+  //   this.docRef = doc(this.firestore, "food-collection", id);
   //   this.docsSnap = await getDoc(this.docRef);
   //   this.docsSnap.data();
 
@@ -171,7 +196,7 @@ export class DataService {
   async editFood(name: string, id: any) {
     // console.log(name, id)
 
-    this.docRef = doc(this.firestore, "fruits", id);
+    this.docRef = doc(this.firestore, "food-collection", id);
 
     const data = {
       chalkboard: name
@@ -191,7 +216,7 @@ export class DataService {
 
   deleteFoodFromDoc(id: any) {
     console.log(id)
-    this.docRef = doc(this.firestore, "fruits", id);
+    this.docRef = doc(this.firestore, "food-collection", id);
     deleteDoc(this.docRef).then(() => {
       this.foodsArray = [];
     })
@@ -199,11 +224,14 @@ export class DataService {
 
 
   filterGenus() {
-    let fruits = this.foodsArray.filter(t => t['genus'] == 'Fruits');
+
+    let fruits = this.foodsArray.filter(t => t['genus'] == 'Obst');
     this.filterGenusGroup.fruits = fruits;
 
-    let vegetables = this.foodsArray.filter(t => t['genus'] == 'Vegetables');
+    let vegetables = this.foodsArray.filter(t => t['genus'] == 'Gemüse');
     this.filterGenusGroup.vegetables = vegetables;
+
+    console.log(this.filterGenusGroup)
   }
 
 }

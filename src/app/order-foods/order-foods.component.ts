@@ -43,7 +43,12 @@ export class OrderFoodsComponent implements OnInit {
     });
 
     this.service.orderCurrentFoods = value;
-    console.log(this.service.orderCurrentFoods)
+    this.service.foodsClass.product = value.product;
+    this.service.foodsClass.euro = value.euro;
+    this.service.foodsClass.unit = value.unit;
+    this.service.foodsClass.origin = value.origin;
+    this.service.foodsClass.genus = this.changeGenus;
+    // console.log(value)
   }
 
 }
