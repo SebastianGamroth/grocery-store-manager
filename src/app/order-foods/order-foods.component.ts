@@ -20,11 +20,19 @@ export class OrderFoodsComponent implements OnInit {
   constructor(public service: DataService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.filterGenusLength();
   }
 
   changeGenusFilter(value: string) {
     this.changeGenus = value;
     this.dataSource = new MatTableDataSource(this.foodsJson.foodsJson[this.changeGenus]);
+  }
+
+  fruits: string;
+  vegetables: string;
+  filterGenusLength() {
+    this.vegetables = this.foodsJson.foodsJson.Gemüse.length;
+    this.fruits = this.foodsJson.foodsJson.Obst.length;
   }
 
   applyFilter(value: Event) {

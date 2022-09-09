@@ -1,9 +1,16 @@
 <div class="mainContainer">
 
-    <mat-button-toggle-group name="fontStyle" aria-label="Font Style" value="fruits">
-        <mat-button-toggle value="fruits" (click)="changeGenusFilter('Obst')">Obst</mat-button-toggle>
-        <mat-button-toggle value="vegetables" (click)="changeGenusFilter('Gemüse')">Gemüse</mat-button-toggle>
-    </mat-button-toggle-group>
+    <div class="changeGenus">
+        <mat-button-toggle-group name="fontStyle" matBadge="{{ fruits }}" aria-label="Font Style" value="fruits">
+            <mat-button-toggle value="fruits" (click)="changeGenusFilter('Obst')">Obst
+            </mat-button-toggle>
+        </mat-button-toggle-group>
+
+        <mat-button-toggle-group name="fontStyle" matBadge="{{ vegetables }}" aria-label="Font Style" value="fruits">
+            <mat-button-toggle value="vegetables" (click)="changeGenusFilter('Gemüse')">Gemüse
+            </mat-button-toggle>
+        </mat-button-toggle-group>
+    </div>
 
     <mat-form-field appearance="standard">
         <mat-label>Filter</mat-label>

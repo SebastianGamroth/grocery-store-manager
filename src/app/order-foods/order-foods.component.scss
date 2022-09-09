@@ -4,8 +4,13 @@
     align-items: center;
 }
 
-mat-button-toggle-group {
+.changeGenus {
     margin-top: 20px;
+}
+
+mat-button-toggle-group {
+    margin-left: 6px;
+    margin-right: 6px;
 }
 
 ::ng-deep .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
@@ -35,4 +40,4 @@ td.mat-footer-cell {
 
 ::ng-deep tr.mat-row:active {
     background: #efefef;
-}   
+}
