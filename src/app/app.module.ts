@@ -34,6 +34,10 @@ import { OrderFoodsComponent } from './order-foods/order-foods.component';
 import { MatTableModule } from '@angular/material/table';
 import { DialogOrderComponent } from './dialog-order/dialog-order.component';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { FooterComponent } from './footer/footer.component';
+import { CopyrightComponent } from './copyright/copyright.component';
+import { ImprintComponent } from './imprint/imprint.component';
+import { PrivacyComponent } from './privacy/privacy.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +50,11 @@ import { MatGridListModule } from '@angular/material/grid-list';
     DialogAddEditComponent,
     StartInfoComponent,
     OrderFoodsComponent,
-    DialogOrderComponent
+    DialogOrderComponent,
+    FooterComponent,
+    CopyrightComponent,
+    ImprintComponent,
+    PrivacyComponent
   ],
   imports: [
     BrowserModule,

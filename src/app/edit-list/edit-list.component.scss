@@ -1,6 +1,7 @@
 .mainContainer {
     display: flex;
     justify-content: center;
+    height: calc(100vh - 204px);
 }
 
 .example-form {

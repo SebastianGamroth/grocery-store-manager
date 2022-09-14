@@ -1,0 +1,22 @@
+.imprintSection {
+    margin: 0px;
+}
+
+.imprintCenter {
+    font-family: "Open Sans", sans-serif;
+    padding: 60px 110px;
+}
+
+a {
+    color: #2dfcd8;
+
+    &:hover {
+        color: #fa2759;
+    }
+}
+
+@media (max-width: 700px) {
+    .imprintCenter {
+        padding: 60px 16px;
+    }
+}

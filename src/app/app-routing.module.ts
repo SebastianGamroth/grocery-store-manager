@@ -5,13 +5,19 @@ import { ChalkboardPlannerComponent } from './chalkboard-planner/chalkboard-plan
 import { EditListComponent } from './edit-list/edit-list.component';
 import { StartInfoComponent } from './start-info/start-info.component';
 import { OrderFoodsComponent } from './order-foods/order-foods.component';
+import { CopyrightComponent } from './copyright/copyright.component';
+import { ImprintComponent } from './imprint/imprint.component';
+import { PrivacyComponent } from './privacy/privacy.component';
 
 const routes: Routes = [
   { path: 'start-info', component: StartInfoComponent },
   { path: 'add-foods', component: AddFoodsComponent },
   { path: 'chalkboard-planner', component: ChalkboardPlannerComponent },
   { path: 'edit-list', component: EditListComponent },
-  { path: 'order-foods', component: OrderFoodsComponent }
+  { path: 'order-foods', component: OrderFoodsComponent },
+  { path: 'copyright', component: CopyrightComponent },
+  { path: 'imprint', component: ImprintComponent },
+  { path: 'privacy', component: PrivacyComponent }
 ];
 
 @NgModule({
