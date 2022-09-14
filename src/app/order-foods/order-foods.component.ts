@@ -19,9 +19,11 @@ export class OrderFoodsComponent implements OnInit {
 
   constructor(public service: DataService, public dialog: MatDialog) { }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
     this.filterGenusLength();
+    await this.service.getAllMoney();
   }
+
 
   changeGenusFilter(value: string) {
     this.changeGenus = value;

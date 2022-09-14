@@ -1,5 +1,22 @@
 <div class="mainContainer">
 
+    <mat-card>
+        <table class="budgetInfo">
+            <tr>
+                <th>Budget:</th>
+                <th>Money made <br> from groceries:</th>
+                <th>Lost money <br> on groceries:</th>
+                <th>Money invested <br> in groceries:</th>
+            </tr>
+            <tr>
+                <td> {{ service.budgetFormat }} €</td>
+                <td> 5 € </td>
+                <td>500 €</td>
+                <td>{{ service.moneyArray.moneyInFood }} €</td>
+            </tr>
+        </table>
+    </mat-card>
+
     <div class="changeGenus">
         <mat-button-toggle-group name="fontStyle" matBadge="{{ fruits }}" aria-label="Font Style" value="fruits">
             <mat-button-toggle value="fruits" (click)="changeGenusFilter('Obst')">Obst

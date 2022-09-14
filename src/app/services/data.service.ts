@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { addDoc, collection, deleteDoc, doc, Firestore, getDocs, setDoc } from '@angular/fire/firestore';
 import { Foods } from '../models/foods.class';
+import { Money } from '../models/money.class';
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +13,30 @@ export class DataService {
   foodsClass = new Foods();
   foodsArray = [];
 
+  moneyClass = new Money();
+  // moneyArray = [];
+  // moneyArray: { budget: number; expenditure: number; revenue: number; moneyInFood: number }[] = [
+  //   {
+  //     'budget': 0,
+  //     'expenditure': 0,
+  //     'revenue': 0,
+  //     'moneyInFood': 0
+  //   }
+  // ];
+  moneyArray: { budget: number; expenditure: number; revenue: number; moneyInFood: number } = {
+    'budget': 0,
+    'expenditure': 0,
+    'revenue': 0,
+    'moneyInFood': 0
+  };
+
   colRef: any;
   docRef: any;
   docsSnap: any;
+
+  colRefMoney: any;
+  docRefMoney: any;
+  docsSnapMoney: any;
 
   addFoodsToArray = [];
 
@@ -30,6 +52,9 @@ export class DataService {
     'fruits': [],
     'vegetables': []
   }
+
+  money: number;
+  lostmoney: number;
 
   // careerSteps: { img: string; title: number; description: string; }[] =[
   //   {
@@ -58,8 +83,10 @@ export class DataService {
 
   constructor(private firestore: Firestore, private http: HttpClient) { }
 
+
   result() {
-    return Math.round((this.orderCurrentFoods['euro'].replace(',', '.') * this.orderPrice) * 100) / 100;
+    this.money = Math.round((this.orderCurrentFoods['euro'].replace(',', '.') * this.orderPrice) * 100) / 100;
+    return this.money;
   }
 
   openOrCloseSideBar() {
@@ -129,6 +156,44 @@ export class DataService {
     this.foodsClass.fat = '';
 
     console.log(this.foodsArray);
+
+  }
+
+  async getAllMoney() {
+    // this.moneyArray = {};
+
+    this.colRefMoney = collection(this.firestore, "food-money");
+    this.docsSnapMoney = await getDocs(this.colRefMoney);
+
+    this.docsSnapMoney.forEach((doc: any) => {
+
+      this.moneyClass.budget = doc.data()['budget'];
+      // this.moneyClass.budget = Math.round(doc.data()['budget'] * 100) / 100;
+      // this.moneyClass.budget = Math.round(doc.data()['budget'].replace('.', ',') * 100) / 100;
+
+      this.moneyClass.expenditure = doc.data()['expenditure'];
+      this.moneyClass.revenue = doc.data()['revenue'];
+      this.moneyClass.moneyInFood = doc.data()['moneyInFood'];
+
+      // this.moneyArray.push(this.moneyClass.toJSON());
+      this.moneyArray = this.moneyClass.toJSON();
+
+    });
+
+    console.log(this.moneyArray);
+    this.changeMoneyFormat();
+  }
+
+  budgetFormat: any;
+
+  changeMoneyFormat() {
+    this.budgetFormat = this.moneyArray.budget;
+
+    this.budgetFormat = Math.round(this.budgetFormat * 100) / 100;
+    this.budgetFormat = this.budgetFormat.toString();
+    this.budgetFormat = this.budgetFormat.replace('.', ',');
+
+    console.log(this.budgetFormat);
   }
 
 
@@ -151,7 +216,7 @@ export class DataService {
       })
   }
 
-  orderFood(changeCalkboard: any) {
+  async orderFood(changeCalkboard: any) {
     this.timeStemp = new Date;
     this.foodsClass.timeStemp = this.timeStemp.getTime();
 
@@ -169,6 +234,58 @@ export class DataService {
       .catch(error => {
         console.log(error);
       })
+
+    // Money
+
+    await this.getAllMoney();
+    await this.editMoney();
+
+  }
+
+
+  getMoney() {
+    this.moneyClass.budget = 88;
+    this.moneyClass.expenditure = 23;
+    this.moneyClass.moneyInFood = 65;
+    this.moneyClass.revenue = 6;
+
+    addDoc(this.colRefMoney, this.moneyClass.toJSON())
+      .then(() => {
+        // this.moneyArray = [];
+        this.getAllMoney();
+      })
+
+    this.getAllMoney();
+    // console.log(this.moneyArray);
+  }
+
+
+
+  async editMoney() {
+    let id = "Fb1skSbxJc1jXr0kKwgq";
+
+    this.docRefMoney = doc(this.firestore, "food-money", id);
+
+    let budget: number = this.moneyClass.budget - this.money;
+    let moneyInFood: number = this.moneyClass.moneyInFood + this.money;
+    let revenue: number = this.moneyClass.revenue + this.lostmoney;
+
+    let data = {
+      budget: budget,
+      moneyInFood: moneyInFood,
+      revenue: revenue
+    };
+
+
+    await setDoc(this.docRefMoney, data, { merge: true })
+      // .then(docRef => {
+      //   console.log("Entire Document has been updated successfully", docRef);
+      // })
+      .catch(error => {
+        console.log(error);
+      })
+
+    await this.getAllMoney();
   }
 
   // async editFood(name: string, id: any) {
@@ -214,12 +331,22 @@ export class DataService {
   }
 
 
-  deleteFoodFromDoc(id: any) {
+  async deleteFoodFromDoc(id: any) {
     console.log(id)
-    this.docRef = doc(this.firestore, "food-collection", id);
+    this.docRef = doc(this.firestore, "food-collection", id)
+    console.log(this.docRef);
     deleteDoc(this.docRef).then(() => {
       this.foodsArray = [];
-    })
+    });
+
+    this.colRefMoney = collection(this.firestore, "food-collection", id);
+    this.docsSnapMoney = await getDocs(this.colRefMoney);
+
+    this.docsSnapMoney.forEach((doc: any) => {
+      let a: any;
+      a = doc.data()['euro'];
+      console.log(a)
+    });
   }
 
 
